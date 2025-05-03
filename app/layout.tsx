@@ -36,9 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" className="scroll-smooth">
-      <body className={cn("overflow-x-hidden overflow-y-hidden", tajawal.variable, arefRuqaa.variable, tajawal.className)}>
+      <body className={cn("overflow-x-hidden ", tajawal.variable, arefRuqaa.variable, tajawal.className)}>
         <CartProvider>
-          <div className="flex min-h-screen flex-col overflow-x-hidden ">
+          <div className="flex min-h-screen flex-col overflow-x-hidden">
             <Header />
             <Suspense>
               <main className="flex-1">{children}</main>
