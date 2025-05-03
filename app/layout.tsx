@@ -39,7 +39,7 @@ export default function RootLayout({
       <body className={cn("overflow-x-hidden", tajawal.variable, arefRuqaa.variable, tajawal.className)}>
         <CartProvider>
           <div className="flex min-h-screen flex-col">
-            {/* <Header /> */}
+            <Header />
             <Suspense>
               <main className="flex-1">{children}</main>
             </Suspense>
