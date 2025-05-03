@@ -123,20 +123,9 @@ export default function Footer() {
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                <span className="text-muted-foreground">الرياض، المملكة العربية السعودية</span>
+                <span className="text-muted-foreground">صنعاء، شارع الزبيري</span>
               </li>
             </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-4 text-xl font-bold">النشرة البريدية</h3>
-            <p className="mb-4 text-muted-foreground">
-              اشترك في نشرتنا البريدية للحصول على آخر العروض والمنتجات الجديدة
-            </p>
-            <div className="flex flex-col gap-2">
-              <Input type="email" placeholder="البريد الإلكتروني" />
-              <Button>اشتراك</Button>
-            </div>
           </div>
         </div>
 
