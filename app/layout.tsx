@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: "لُقمة حلا | Loqmat Hala",
   description: "متجر الحلويات المنزلية الأشهى والألذ - حلويات منزلية بنكهة مميزة",
   keywords: "حلويات, حلويات منزلية, كيك, كوكيز, تشيز كيك, حلويات عربية, لقمة حلا",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -36,10 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" className="scroll-smooth">
-      <body className={cn(tajawal.variable, arefRuqaa.variable, tajawal.className)}>
+      <body className={cn("overflow-x-hidden", tajawal.variable, arefRuqaa.variable, tajawal.className)}>
         <CartProvider>
           <div className="flex min-h-screen flex-col">
-            <Header />
+            {/* <Header /> */}
             <Suspense>
               <main className="flex-1">{children}</main>
             </Suspense>
