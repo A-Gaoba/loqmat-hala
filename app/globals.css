@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 36 30% 98%;
+  --foreground: 30 15% 15%;
+
+  --primary: 25 95% 55%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 30 50% 95%;
+  --secondary-foreground: 30 15% 15%;
+
+  --accent: 15 80% 60%;
+  --accent-foreground: 0 0% 100%;
+
+  --muted: 30 15% 90%;
+  --muted-foreground: 30 15% 40%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 30 15% 15%;
+
+  --border: 30 15% 85%;
+  --input: 30 15% 85%;
+
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 0 0% 100%;
+
+  --radius: 0.75rem;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+
+  h1 {
+    @apply text-3xl font-bold md:text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl font-bold md:text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl font-bold md:text-2xl lg:text-3xl;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+
+  .fancy-border {
+    @apply relative after:absolute after:inset-0 after:border-2 after:border-primary/50 after:rounded-lg after:translate-x-2 after:translate-y-2 after:-z-10;
+  }
+
+  .section-title {
+    @apply relative inline-block mb-12 text-center;
+  }
+
+  .section-title::after {
+    content: "";
+    @apply absolute bottom-0 right-1/2 translate-x-1/2 w-24 h-1 bg-primary rounded-full mt-2;
+  }
+
+  .product-card {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+  }
+
+  .product-card-image {
+    @apply transition-all duration-500 group-hover:scale-110;
+  }
+
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-l from-primary to-accent;
+  }
+
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+
+  .parallax-bg {
+    @apply bg-fixed bg-center bg-cover;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float 4s ease-in-out infinite reverse;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.staggered-fade-in > * {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.staggered-fade-in > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.staggered-fade-in > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.staggered-fade-in > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.staggered-fade-in > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.staggered-fade-in > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.staggered-fade-in > *:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Scroll animations */
+.reveal {
+  position: relative;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+
+.active.fade-bottom {
+  animation: fade-bottom 0.5s ease-in-out;
+}
+.active.fade-left {
+  animation: fade-left 0.5s ease-in-out;
+}
+.active.fade-right {
+  animation: fade-right 0.5s ease-in-out;
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-left {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-right {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
